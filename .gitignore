@@ -1,0 +1,6 @@
+**/Generated Files/
+**/x64/
+**/bin/
+**/obj/
+**/.vs/
+packages/

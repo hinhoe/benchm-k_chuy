@@ -1,0 +1,33 @@
+namespace Algorithm_Benchmark_Tool
+{
+    [default_interface]
+    runtimeclass AlgorithmCardControl : Microsoft.UI.Xaml.Controls.UserControl
+    {
+        AlgorithmCardControl();
+        String AlgorithmName;
+        static Microsoft.UI.Xaml.DependencyProperty AlgorithmNameProperty{ get; };
+        String Complexity;
+        static Microsoft.UI.Xaml.DependencyProperty ComplexityProperty{ get; };
+        String Best;
+        static Microsoft.UI.Xaml.DependencyProperty BestProperty{ get; };
+        String Avg;
+        static Microsoft.UI.Xaml.DependencyProperty AvgProperty{ get; };
+        String Worst;
+        static Microsoft.UI.Xaml.DependencyProperty WorstProperty{ get; };
+        String Space;
+        static Microsoft.UI.Xaml.DependencyProperty SpaceProperty{ get; };
+
+        // ---  ---
+        String Comparisons;
+        static Microsoft.UI.Xaml.DependencyProperty ComparisonsProperty{ get; };
+        String Swaps;
+        static Microsoft.UI.Xaml.DependencyProperty SwapsProperty{ get; };
+        String Status;
+        static Microsoft.UI.Xaml.DependencyProperty StatusProperty{ get; };
+        String ElapsedMs;
+        static Microsoft.UI.Xaml.DependencyProperty ElapsedMsProperty{ get; };
+
+        void UpdateBars(Int32[] data, Int32 index1, Int32 index2);        
+        void SetStatus(String status, Int32 elapsedMs);
+    }
+}

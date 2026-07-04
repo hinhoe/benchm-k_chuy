@@ -1,0 +1,11 @@
+namespace Algorithm_Benchmark_Tool
+{
+    delegate void AlgorithmVisibilityHandler(String algoTag, Boolean isVisible);
+    [default_interface]
+    runtimeclass SidebarControl : Microsoft.UI.Xaml.Controls.UserControl
+    {
+        SidebarControl();
+        event AlgorithmVisibilityHandler AlgorithmVisibilityChanged;
+        String GetInputText();
+    }
+}

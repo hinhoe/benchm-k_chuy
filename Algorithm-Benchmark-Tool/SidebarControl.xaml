@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Algorithm_Benchmark_Tool.SidebarControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Algorithm_Benchmark_Tool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Border BorderThickness="0, 0, 1, 0" BorderBrush="#363941" Background="#161B22">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Padding="0, 20, 0, 20" BorderThickness="0, 0, 0, 1" BorderBrush="#363941">
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                       Text="Bảng điều khiển" 
+                       Foreground="white" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="20,0,0,0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment = "Left"
+                       />
+                <TextBlock Grid.Row="1"
+                       Text="Cấu hình dữ liệu" 
+                       Foreground="#94a3b8" 
+                       FontSize="14" 
+                       FontWeight="Normal" 
+                       Margin="20,10,0,0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment = "Left"
+                       />
+                </Grid>
+            </Border>
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollMode="Disabled">
+                <StackPanel>
+                    <Border Padding="20, 20, 0, 20" BorderThickness="0, 0, 0, 1" BorderBrush="#363941">
+                        <StackPanel Spacing="10">
+                            <TextBlock 
+                                Text="Độ dài mảng" 
+                                Foreground="white" 
+                                FontSize="18" 
+                                FontWeight="Bold" 
+                                HorizontalAlignment = "Left"
+                                Margin="0, 0, 0, 10"
+                            />
+                            <TextBox
+                                x:Name="sizeInput" 
+                                InputScope="Number"
+                                Width="280"
+                                Height="35"
+                                Padding="8,5,8,5"
+                                FontSize="14"
+                                Background="#161B22"
+                                Foreground="White"
+                                BorderBrush="#363941"
+                                BorderThickness="1"
+                                PlaceholderText="Nhập dữ liệu vào đây..."
+                                HorizontalAlignment = "Left"
+                                Margin="0, 0, 0, 20"
+                            />
+                            <TextBlock 
+                                Text="Nhập giá trị" 
+                                Foreground="white" 
+                                FontSize="18" 
+                                FontWeight="Bold" 
+                                HorizontalAlignment = "Left"
+                                Margin="0, 0, 0, 10"
+                            />
+                            <TextBox
+                                x:Name="numberInput"
+                                TextWrapping="Wrap"
+                                Width="280"
+                                Height="100"
+                                Padding="8,5,8,5"
+                                FontSize="14"
+                                Background="#161B22"
+                                Foreground="White"
+                                BorderBrush="#363941"
+                                BorderThickness="1"
+                                PlaceholderText="e.g. 10, 20, 30,..."
+                                HorizontalAlignment = "Left"
+                                Margin="0, 0, 0, 10"
+                            />
+                            <TextBlock 
+                                Text="Chỉ nhập số nguyên"
+                                Foreground="#94a3b8" 
+                                FontSize="14" 
+                                FontWeight="Normal" 
+                                HorizontalAlignment = "Left"
+                                Margin="0, 0, 0, 10"
+                            />
+                        </StackPanel>
+                    </Border>
+                    <Border Padding="20, 20, 0, 20" BorderThickness="0, 0, 0, 1" BorderBrush="#363941">
+                        <StackPanel Spacing="10" Margin="10">
+                            <TextBlock 
+                        Text="Chọn thuật toán"
+                        Foreground="white" 
+                        FontSize="18" 
+                        FontWeight="Bold" 
+                        HorizontalAlignment = "Left"
+                        Margin="0, 0, 0, 10"
+                    />
+                            <CheckBox 
+                        x:Name="chkOption1" 
+                        Tag="BubbleSort"
+                        Content="Bubble Sort" 
+                        Foreground="White" 
+                        Checked="ToggleCheckBox_Checked" 
+                        Unchecked="ToggleCheckBox_Unchecked"/>
+                            <CheckBox 
+                        x:Name="chkOption2" 
+                        Tag="InsertionSort"
+                        Content="Insertion Sort" 
+                        Foreground="White" 
+                        Checked="ToggleCheckBox_Checked" 
+                        Unchecked="ToggleCheckBox_Unchecked"/>
+                            <CheckBox 
+                        x:Name="chkOption3" 
+                        Tag="QuickSort"
+                        Content="Quick Sort" 
+                        Foreground="White" 
+                        Checked="ToggleCheckBox_Checked" 
+                        Unchecked="ToggleCheckBox_Unchecked"/>
+                            <CheckBox 
+                        x:Name="chkOption4" 
+                        Tag="MergeSort"
+                        Content="Merge Sort" 
+                        Foreground="White" 
+                        Checked="ToggleCheckBox_Checked" 
+                        Unchecked="ToggleCheckBox_Unchecked"/>
+                            <CheckBox 
+                        x:Name="chkOption5" 
+                        Tag="ShellSort"
+                        Content="Shell Sort" 
+                        Foreground="White" 
+                        Checked="ToggleCheckBox_Checked" 
+                        Unchecked="ToggleCheckBox_Unchecked"
+                        />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+            <Button 
+                Margin="0, 20, 0, 20"
+                Grid.Row="2" 
+                x:Name="btnRandomData"
+                Click="btnRandomData_Click"
+                Content="Tạo dữ liệu ngẫu nhiên"
+                Background="#2A2D34"
+                Foreground="White"
+                BorderBrush="#363941"
+                BorderThickness="1"
+                Padding="15,8"
+                CornerRadius="4"
+                HorizontalAlignment="Center">
+                <Button.Resources>
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#3E424C"/>
+                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#4A4E5A"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#1E2025"/>
+                    <SolidColorBrush x:Key="ButtonForegroundPressed" Color="#D1D1D1"/>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

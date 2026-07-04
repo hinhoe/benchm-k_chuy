@@ -1,0 +1,13 @@
+namespace Algorithm_Benchmark_Tool
+{
+    [default_interface]
+    runtimeclass AnalyticsChartControl : Microsoft.UI.Xaml.Controls.UserControl
+    {
+        AnalyticsChartControl();
+
+    void ClearCharts();
+
+    void UpdateData(String algoTag, Boolean isRunning, Int32 swaps);
+    void AdvanceStep();
+}
+}

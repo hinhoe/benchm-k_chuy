@@ -1,0 +1,14 @@
+namespace Algorithm_Benchmark_Tool
+{
+    [default_interface]
+    runtimeclass HeaderControl : Microsoft.UI.Xaml.Controls.UserControl
+    {
+        HeaderControl();
+
+    event Microsoft.UI.Xaml.RoutedEventHandler StartRequested;
+    event Microsoft.UI.Xaml.RoutedEventHandler PauseRequested;
+    event Microsoft.UI.Xaml.RoutedEventHandler StopRequested;
+    event Microsoft.UI.Xaml.RoutedEventHandler StepRequested;
+    event Microsoft.UI.Xaml.RoutedEventHandler BackRequested;
+    }
+}
