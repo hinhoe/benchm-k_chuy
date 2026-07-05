@@ -81,7 +81,7 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
             L"ElapsedMs",
             xaml_typename<winrt::hstring>(),
             xaml_typename<Algorithm_Benchmark_Tool::AlgorithmCardControl>(),
-            PropertyMetadata{ winrt::box_value(L"0ms") }
+            PropertyMetadata{ winrt::box_value(L"") }
         );
 
     AlgorithmCardControl::AlgorithmCardControl()
