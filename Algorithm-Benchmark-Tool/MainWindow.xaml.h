@@ -1,4 +1,5 @@
 #pragma once
+
 #include "MainWindow.g.h"
 #include <winrt/Microsoft.UI.Xaml.h>
 #include <vector>
@@ -23,7 +24,13 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
         void AppHeader_StepRequested(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
         void AppHeader_StopRequested(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
         void AppHeader_BackRequested(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
+
     private:
+        // ==========================================
+        // BIẾN TRẠNG THÁI MỚI THÊM VÀO DƯỚI ĐÂY
+        // ==========================================
+        bool m_isPaused{ false };
+
         winrt::Microsoft::UI::Xaml::DispatcherTimer m_timer{ nullptr };
 
         // Dùng namespace Core:: để khai báo
@@ -32,7 +39,8 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
         Core::QuickSortStepper m_quickStepper;
         Core::MergeSortStepper m_mergeStepper;
         Core::ShellSortStepper m_shellStepper;
-		// Lịch sử trạng thái của từng thuật toán
+
+        // Lịch sử trạng thái của từng thuật toán
         std::vector<Core::BubbleSortStepper> m_bubbleHistory;
         std::vector<Core::InsertionSortStepper> m_insertionHistory;
         std::vector<Core::QuickSortStepper> m_quickHistory;

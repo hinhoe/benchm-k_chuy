@@ -233,16 +233,31 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
 
         InitializeAlgorithms(data);
         m_timer.Start();
+
+        // Reset lại trạng thái pause khi ấn Start từ đầu
+        m_isPaused = false;
     }
 
     void MainWindow::AppHeader_PauseRequested(IInspectable const&, RoutedEventArgs const&)
     {
-        m_timer.Stop();
+        if (!m_isPaused)
+        {
+            // Nếu đang chạy -> Tạm dừng
+            m_timer.Stop();
+            m_isPaused = true;
+        }
+        else
+        {
+            // Nếu đang tạm dừng -> Bật chạy tiếp
+            m_timer.Start();
+            m_isPaused = false;
+        }
     }
 
     void MainWindow::AppHeader_StepRequested(IInspectable const&, RoutedEventArgs const&)
     {
         m_timer.Stop();
+        m_isPaused = true; // Ấn Next đồng nghĩa với việc ngắt tự động chạy, chuyển sang Pause
 
         // SỬA LỖI Ở DÒNG NÀY: Dùng GetResult() để truy cập Data
         if (m_bubbleStepper.GetResult().Data.empty()) {
@@ -256,9 +271,9 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
     void MainWindow::AppHeader_StopRequested(IInspectable const&, RoutedEventArgs const&)
     {
         m_timer.Stop();
+        m_isPaused = false; // Reset lại biến pause khi ấn Stop
         ResetUI();
     }
-
     // ==========================================
     // XỬ LÝ NÚT BACK (LÙI 1 BƯỚC)
     // ==========================================

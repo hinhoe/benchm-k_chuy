@@ -46,6 +46,8 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
         void UpdateBars(winrt::array_view<int32_t const> data, int32_t index1, int32_t index2);
         void SetStatus(winrt::hstring const& status, int32_t elapsedMs);
 
+        void BtnExpand_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
+
     private:
         static Microsoft::UI::Xaml::DependencyProperty m_algorithmNameProperty;
         static Microsoft::UI::Xaml::DependencyProperty m_complexityProperty;
@@ -58,6 +60,8 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
         static Microsoft::UI::Xaml::DependencyProperty m_SwapsProperty;
         static Microsoft::UI::Xaml::DependencyProperty m_StatusProperty;
         static Microsoft::UI::Xaml::DependencyProperty m_ElapsedMsProperty;
+
+        bool m_isExpanded{ false };
     };
 }
 

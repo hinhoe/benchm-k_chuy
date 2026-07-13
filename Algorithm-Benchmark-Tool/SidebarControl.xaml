@@ -103,6 +103,11 @@
                     </Border>
                     <Border Padding="20, 20, 0, 20" BorderThickness="0, 0, 0, 1" BorderBrush="#363941">
                         <StackPanel Spacing="10" Margin="10">
+                            <StackPanel.Resources>
+                                <SolidColorBrush x:Key="CheckBoxForegroundChecked" Color="White"/>
+                                <SolidColorBrush x:Key="CheckBoxForegroundCheckedPointerOver" Color="White"/>
+                                <SolidColorBrush x:Key="CheckBoxForegroundCheckedPressed" Color="White"/>
+                            </StackPanel.Resources>
                             <TextBlock 
                         Text="Chọn thuật toán"
                         Foreground="white" 

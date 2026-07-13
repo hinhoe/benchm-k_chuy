@@ -3,7 +3,7 @@
 #if __has_include("AlgorithmCardControl.g.cpp")
 #include "AlgorithmCardControl.g.cpp"
 #endif
-
+#include <cmath>
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
 
@@ -267,4 +267,44 @@ namespace winrt::Algorithm_Benchmark_Tool::implementation
             SortingCanvas().Children().Append(rect);
         }
     }
+    void AlgorithmCardControl::BtnExpand_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
+    {
+        // Lấy nút bấm và icon bên trong nó
+        auto btn = sender.as<winrt::Microsoft::UI::Xaml::Controls::Button>();
+        auto icon = btn.Content().as<winrt::Microsoft::UI::Xaml::Controls::FontIcon>();
+
+        if (!m_isExpanded)
+        {
+            // TRẠNG THÁI: PHÓNG TO
+            // Bạn có thể chỉnh con số 800 và 600 này cho vừa mắt
+            this->Width(800);
+            this->Height(600);
+
+            // Đổi sang icon Thu nhỏ (BackToWindow)
+            icon.Glyph(L"\xE73F");
+            m_isExpanded = true;
+        }
+        else
+        {
+            // TRẠNG THÁI: THU NHỎ VỀ BAN ĐẦU
+                // Trả Width và Height về Auto (NAN trong C++ tương đương Auto trong XAML)
+            this->Width(std::nan(""));
+            this->Height(std::nan(""));
+
+            // Đổi lại icon Phóng to (FullScreen)
+            icon.Glyph(L"\xE740");
+            m_isExpanded = false;
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
 }

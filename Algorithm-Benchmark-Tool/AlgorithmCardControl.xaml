@@ -16,16 +16,31 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Margin="0,0,0,10">
-                    <TextBlock Text="{x:Bind AlgorithmName, Mode=OneWay}" Foreground="White" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Border Background="#363d4e" CornerRadius="4" Padding="5,2" Margin="0,0,10,0">
+            <Grid Grid.Row="0" Margin="0,0,0,10">
+                <TextBlock Text="{x:Bind AlgorithmName, Mode=OneWay}" 
+               Foreground="White" FontSize="16" FontWeight="SemiBold" 
+               HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" VerticalAlignment="Center">
+                    <Border Background="#363d4e" CornerRadius="4" Padding="5,2" VerticalAlignment="Center">
                         <TextBlock Text="{x:Bind Status, Mode=OneWay}" Foreground="#adc6ff" FontSize="12"/>
                     </Border>
-                    <TextBlock Text="{x:Bind ElapsedMs, Mode=OneWay}" Foreground="#8B949E" FontSize="14" VerticalAlignment="Center"/>
+
+                    <TextBlock Text="{x:Bind ElapsedMs, Mode=OneWay}" 
+                   Foreground="#8B949E" FontSize="14" VerticalAlignment="Center"/>
+
+                    <Button x:Name="BtnExpand" 
+                Background="Transparent" 
+                BorderThickness="0" 
+                Padding="6" 
+                VerticalAlignment="Center" 
+                Click="BtnExpand_Click"
+                ToolTipService.ToolTip="Phóng to">
+                        <FontIcon Glyph="&#xE740;" FontSize="14" Foreground="#8B949E"/>
+                    </Button>
                 </StackPanel>
-                </Grid>
-                <Border Grid.Row="1" BorderBrush="#30363D" BorderThickness="1" CornerRadius="4" Margin="0,10" Background="#10131a">
+            </Grid>
+            <Border Grid.Row="1" BorderBrush="#30363D" BorderThickness="1" CornerRadius="4" Margin="0,10" Background="#10131a">
                     <Canvas x:Name="SortingCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 </Border>
 

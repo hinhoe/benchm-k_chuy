@@ -32,19 +32,19 @@
                        />
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Spacing="10" Margin="40, 0, 0, 0">
 
-                <Button x:Name="btnBack" Click="btnBack_Click" Margin="0,0,10,0" Background="#88d8b0" BorderBrush="#30363d">
+                <RepeatButton x:Name="btnBack" Click="btnBack_Click" Margin="0,0,10,0" Background="#88d8b0" BorderBrush="#30363d" Delay="200" Interval="1">
                     <StackPanel Orientation="Horizontal" Spacing="5">
                         <SymbolIcon Symbol="Previous" />
                         <TextBlock Text="Back" VerticalAlignment="Center"/>
                     </StackPanel>
-                </Button>
+                </RepeatButton>
 
-                <Button x:Name="btnStep" Click="btnStep_Click" Margin="0,0,10,0" Background="#88d8b0" BorderBrush="#30363d">
+                <RepeatButton x:Name="btnStep" Click="btnStep_Click" Margin="0,0,10,0" Background="#88d8b0" BorderBrush="#30363d" Delay="200" Interval="1">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Next  " Margin="5,0,0,0"/>
+                        <TextBlock Text="Next  " Margin=    "5,0,0,0"/>
                         <SymbolIcon Symbol="Next"/>
                     </StackPanel>
-                </Button>
+                </RepeatButton>
                 
                 <Button Background="#adc6ff" Foreground="#003262" CornerRadius="6" Padding="12,6"  x:Name="btnStart" Click="btnStart_Click">
                     <StackPanel Orientation="Horizontal" Spacing="8">
